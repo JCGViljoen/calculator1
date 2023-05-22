@@ -1,21 +1,22 @@
 const screenDisplay = document.querySelector('.screen')
-
 const btn = document.querySelectorAll('button')
 
+// empty array
 let calculation = []
 
-let accumulativeCalculation
+// created variable
+let theCalculation
 
 function calculate(button){
      const value = button.textContent
     if(value == 'clear'){
         calculation = []
-        screenDisplay.textContent = '.'
+        screenDisplay.textContent = '0'
     } else if ( value == '='){
-        screenDisplay.textContent = eval(accumulativeCalculation)
+        screenDisplay.textContent = eval(theCalculation).toFixed(2)
     } else {calculation.push(value)
-        accumulativeCalculation = calculation.join('')
-        screenDisplay.textContent = accumulativeCalculation
+        theCalculation = calculation.join('')
+        screenDisplay.textContent = theCalculation
     }
 
     
@@ -24,18 +25,21 @@ function calculate(button){
 
      console.log(calculation);
     
-    // used chat gpt to check for any errors in my code 
+    // backspace btn
      function backspace() {
         calculation.pop();
-        accumulativeCalculation = calculation.join('');
-        screenDisplay.textContent = accumulativeCalculation;
+        theCalculation = calculation.join('');
+        screenDisplay.textContent = theCalculation;
       }
+
+     
       
       btn.forEach(button => {
-        if (button.textContent === '⌫') {
+        if (button.textContent === '<i class="fa-solid fa-delete-left">') {
           button.addEventListener('click', backspace);
         } else {
           button.addEventListener('click', () => calculate(button));
         }
       });
-    
+      
+      
