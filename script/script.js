@@ -25,7 +25,7 @@ function calculate(button){
 
      console.log(calculation);
     
-    
+    // backspace btn
      function backspace() {
         calculation.pop();
         theCalculation = calculation.join('');
@@ -40,4 +40,3 @@ function calculate(button){
         }
       });
       
-      btn.addEventListener(KeyboardEvent)
