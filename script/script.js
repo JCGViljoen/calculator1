@@ -13,7 +13,7 @@ function calculate(button){
         calculation = []
         screenDisplay.textContent = '0'
     } else if ( value == '='){
-        screenDisplay.textContent = eval(theCalculation)
+        screenDisplay.textContent = eval(theCalculation).toFixed(2)
     } else {calculation.push(value)
         theCalculation = calculation.join('')
         screenDisplay.textContent = theCalculation
@@ -31,6 +31,8 @@ function calculate(button){
         theCalculation = calculation.join('');
         screenDisplay.textContent = theCalculation;
       }
+
+     
       
       btn.forEach(button => {
         if (button.textContent === '<i class="fa-solid fa-delete-left">') {
