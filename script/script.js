@@ -11,7 +11,7 @@ function calculate(button){
      const value = button.textContent
     if(value == 'clear'){
         calculation = []
-        screenDisplay.textContent = '.'
+        screenDisplay.textContent = '0'
     } else if ( value == '='){
         screenDisplay.textContent = eval(theCalculation)
     } else {calculation.push(value)
